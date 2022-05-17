@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PusherNotificationController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +23,6 @@ Route::get('/notification', function () {
 });
  
 Route::get('/send',[PusherNotificationController::class, 'notification']);
+
+Route::get('/real-time',[UserController::class, 'index']);
+Route::post('/data',[UserController::class, 'store']);
